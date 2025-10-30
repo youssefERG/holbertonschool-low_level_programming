@@ -1,13 +1,14 @@
 #include "main.h"
 
+/* Forward declaration of helper function */
+int _sqrt_helper(int n, int i);
+
 /**
  * _sqrt_recursion - returns the natural square root of n
  * @n: number to calculate
  *
  * Return: natural square root, or -1 if none exists
  */
-int _sqrt_helper(int n, int i);
-
 int _sqrt_recursion(int n)
 {
 	if (n < 0)
@@ -17,10 +18,10 @@ int _sqrt_recursion(int n)
 
 /**
  * _sqrt_helper - helper function to find square root
- * @n: number
- * @i: current guess
+ * @n: number to calculate
+ * @i: current guess to check
  *
- * Return: square root, or -1
+ * Return: square root, or -1 if none exists
  */
 int _sqrt_helper(int n, int i)
 {
