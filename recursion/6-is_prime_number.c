@@ -1,5 +1,8 @@
 #include "main.h"
 
+/* Forward declaration of helper function */
+int _is_prime_helper(int n, int i);
+
 /**
  * is_prime_number - checks if n is prime
  * @n: number to check
