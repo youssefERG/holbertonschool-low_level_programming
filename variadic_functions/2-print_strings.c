@@ -3,24 +3,28 @@
 #include <stdarg.h>
 
 /**
- * print_numbers - prints numbers with a separator
- * @separator: string printed between numbers
- * @n: number of integers passed
+ * print_strings - prints strings with a separator
+ * @separator: string printed between strings
+ * @n: number of strings passed
  *
  * Return: void
  */
-void print_numbers(const char *separator, const unsigned int n, ...)
+void print_strings(const char *separator, const unsigned int n, ...)
 {
 	va_list args;
 	unsigned int i;
-	int num;
+	char *str;
 
 	va_start(args, n);
 
 	for (i = 0; i < n; i++)
 	{
-		num = va_arg(args, int);
-		printf("%d", num);
+		str = va_arg(args, char *);
+
+		if (str == NULL)
+			printf("(nil)");
+		else
+			printf("%s", str);
 
 		if (separator != NULL && i != n - 1)
 			printf("%s", separator);
