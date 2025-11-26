@@ -1,5 +1,24 @@
 #include "lists.h"
+/* minimal _strlen and _strdup implementations (non-static) */
+unsigned int _strlen(const char *s)
+{
+    unsigned int i = 0;
+    if (!s) return (0);
+    while (s[i]) i++;
+    return (i);
+}
 
+char *_strdup(const char *s)
+{
+    unsigned int len = _strlen(s);
+    char *copy = malloc(len + 1);
+    unsigned int i;
+    if (!copy) return (NULL);
+    for (i = 0; i < len; i++)
+        copy[i] = s[i];
+    copy[len] = '\0';
+    return (copy);
+}
 /**
  * add_node - adds a new node at the beginning of a list_t list
  * @head: double pointer to the head of the list
