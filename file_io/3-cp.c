@@ -19,11 +19,7 @@ void error_exit(const char *msg, const char *file, int code)
 /**
  * main - copies the contents of a file to another file.
  * Usage: cp file_from file_to
- * Exit codes:
- *  97 - incorrect arg count
- *  98 - can't read from file_from
- *  99 - can't write to file_to
- * 100 - can't close fd
+ * Exit codes:97 - incorrect arg count98 - can't read from file_from99 - can't write to file_to100 - can't close fd
  */
 int main(int argc, char *argv[])
 {
